@@ -6,7 +6,7 @@ def read_txt(filename):
         return f.readlines()
 
 
-def solution1():
+def solution1(data):
     two_count = 0
     three_count = 0
     for each_data in data:
@@ -30,6 +30,7 @@ def solution1():
 
 
 def solution2(data):
+    # O(n^3)
     for index_one in range(len(data)):
         for index_two in range(index_one + 1, len(data)):
             difference = 0
