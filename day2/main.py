@@ -40,6 +40,8 @@ def solution2(data):
             for index, each_letter in enumerate(data_one):
                 if data_two[index] != each_letter:
                     difference += 1
+                    if difference > 1:
+                        break
                 else:
                     this_list.append(each_letter)
             if difference == 1:
