@@ -30,7 +30,7 @@ def solution1(data):
 
 
 def solution2(data):
-    # O(n^3)
+    # O(n^2 * len)
     for index_one in range(len(data)):
         for index_two in range(index_one + 1, len(data)):
             difference = 0
@@ -49,12 +49,30 @@ def solution2(data):
                 return
 
 
+def solution2_2(data):
+    # O(n * len^2)
+    for index in range(len(data)):
+        # len
+        left_letters_set = set()
+        for each_index, each_data in enumerate(data):
+            # n
+            left_letters_list = each_data[0: index] + each_data[index + 1:]
+            left_letters_str = ''.join(left_letters_list)
+            if left_letters_str not in left_letters_set:
+                # len
+                left_letters_set.add(left_letters_str)
+            else:
+                print(left_letters_str)
+                return
+
+
 def main():
     filename = 'input.txt'
     data = read_txt(filename)
     data = [_.replace('\n', '') for _ in data]
     # solution1(data)
-    solution2(data)
+    # solution2(data)
+    solution2_2(data)
 
 if __name__ == '__main__':
     main()
