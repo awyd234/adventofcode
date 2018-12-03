@@ -33,7 +33,6 @@ def solution1(data):
 
 def solution2(data):
     result_dict = {}
-    location_dict = {}
     for each_data in data:
         str_list = each_data.split(' ')
         this_id = int(''.join(str_list[0].split('#')[1:]))
@@ -71,7 +70,6 @@ def solution2(data):
                     break
         if flag:
             print(this_id)
-    print(location_dict)
 
 
 def main():
