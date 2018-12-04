@@ -45,7 +45,7 @@ def solution2(data):
         height = int(height_str)
         for row in range(left_edge, left_edge + width):
             for col in range(top_edge, top_edge + height):
-                index = row + col * 1000
+                index = row + col * 2000
                 if result_dict.get(index) is None:
                     result_dict[index] = set()
                 result_dict[index].add(this_id)
@@ -64,7 +64,7 @@ def solution2(data):
             if not flag:
                 break
             for col in range(top_edge, top_edge + height):
-                index = row + col * 1000
+                index = row + col * 2000
                 if len(result_dict[index]) > 1:
                     flag = False
                     break
