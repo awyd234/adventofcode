@@ -63,8 +63,6 @@ def solution2(data):
             old_now_next = all_data[old_now]['next']
             old_now_next_next = all_data[old_now_next]['next']
             now = count
-            if now == old_now_next:
-                now = count
             all_data[old_now_next]['next'] = count
             all_data[old_now_next_next]['prev'] = count
             all_data.append({
@@ -78,8 +76,8 @@ def solution2(data):
 def main():
     filename = 'input.txt'
     data = read_txt(filename)
-    solution1(data)
-    # solution2(data)
+    # solution1(data)
+    solution2(data)
 
 
 if __name__ == '__main__':
